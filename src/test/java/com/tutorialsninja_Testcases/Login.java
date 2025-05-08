@@ -21,7 +21,7 @@ public class Login extends Base {
 	}
 
 	@BeforeMethod
-	public void setup() {
+	public void setup(){
 		driver = initializeBrowserandLaunchApplicaionusingURL(prop.getProperty("browserName"));
 		HomePage hp = PageFactory.initElements(driver, HomePage.class);
 		hp.getMyAccount().click();

@@ -43,6 +43,7 @@ public class Base {
 	}
 
 	public WebDriver initializeBrowserandLaunchApplicaionusingURL(String browserName) {
+
 		if (browserName.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
 		} else if (browserName.equalsIgnoreCase("edge")) {

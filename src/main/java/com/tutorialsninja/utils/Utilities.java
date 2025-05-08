@@ -21,14 +21,14 @@ public class Utilities {
 
 	public static String captureScreenshot(WebDriver driver, String testName) {
 		File screenShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		String destiantionScreenshotPath = System.getProperty("user.dir") + "\\Screenshots" + testName + ".png";
+		String destinationScreenshotPath = System.getProperty("user.dir") + "\\Screenshots" + testName + ".png";
 		try {
-			org.openqa.selenium.io.FileHandler.copy(screenShot, new File(destiantionScreenshotPath));
+			org.openqa.selenium.io.FileHandler.copy(screenShot, new File(destinationScreenshotPath));
 		} catch (IOException e) {
 
 			e.printStackTrace();
 		}
-		return destiantionScreenshotPath;
+		return destinationScreenshotPath;
 
 	}
 

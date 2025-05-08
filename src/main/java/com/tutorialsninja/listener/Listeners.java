@@ -52,8 +52,8 @@ public class Listeners implements ITestListener {
 		} catch (SecurityException e) {
 			e.printStackTrace();
 		}
-		String destiantionScreenshotPath = Utilities.captureScreenshot(driver, result.getName());
-		extentTest.addScreenCaptureFromPath(destiantionScreenshotPath);
+		String destinationScreenshotPath = Utilities.captureScreenshot(driver, result.getName());
+		extentTest.addScreenCaptureFromPath(destinationScreenshotPath);
 		extentTest.log(Status.INFO, result.getThrowable());
 		extentTest.log(Status.FAIL, result.getName() + "got failed");
 
@@ -68,7 +68,6 @@ public class Listeners implements ITestListener {
 	@Override
 	public void onFinish(ITestContext context) {
 		extentReport.flush();
-
 		String pathofExtentReports = System.getProperty("user.dir") + "\\test-output\\ExtentReports\\extentReport.html";
 		File extentReport = new File(pathofExtentReports);
 		try {

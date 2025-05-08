@@ -3,10 +3,13 @@
 <suite name="Suite">
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="com.tutorialsninja_Testcases.Login" />
 			<class name="com.tutorialsninja_Testcases.Register" />
+			<class name="com.tutorialsninja_Testcases.Login" />
 		</classes>
 	</test> <!--
 	Test -->
 </suite> <!--
 Suite -->
+
+
+

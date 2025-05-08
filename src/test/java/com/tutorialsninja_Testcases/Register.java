@@ -85,10 +85,4 @@ public class Register extends Base {
 				"Password warning message is not displayed");
 	}
 
-	
-//	@Test(priority = 4)
-//	public void verifyalltheFieldshaveProperPlaceholders() {
-//		
-//	}		
-	
 }
