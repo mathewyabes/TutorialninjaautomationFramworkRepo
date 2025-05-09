@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.testng.annotations.Parameters;
 
 import com.tutorialsninja.utils.Utilities;
 
@@ -42,6 +43,7 @@ public class Base {
 
 	}
 
+	@Parameters("browser")
 	public WebDriver initializeBrowserandLaunchApplicaionusingURL(String browserName) {
 
 		if (browserName.equalsIgnoreCase("chrome")) {
@@ -59,4 +61,5 @@ public class Base {
 
 		return driver;
 	}
+
 }

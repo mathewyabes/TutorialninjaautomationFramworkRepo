@@ -5,6 +5,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.tutorialsninja.pages.HomePage;
@@ -21,8 +22,9 @@ public class Login extends Base {
 	}
 
 	@BeforeMethod
-	public void setup(){
-		driver = initializeBrowserandLaunchApplicaionusingURL(prop.getProperty("browserName"));
+	@Parameters("browser")
+	public void setup(String b) {
+		driver = initializeBrowserandLaunchApplicaionusingURL(b);
 		HomePage hp = PageFactory.initElements(driver, HomePage.class);
 		hp.getMyAccount().click();
 		hp.getLoginOption().click();

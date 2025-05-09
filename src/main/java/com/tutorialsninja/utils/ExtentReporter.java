@@ -12,7 +12,8 @@ public class ExtentReporter {
 
 	public static ExtentReports generateExtentReport() {
 		ExtentReports extentreport = new ExtentReports();
-		File extenReportFile = new File(System.getProperty("user.dir") + "\\test-output\\ExtentReports\\extentReport.html");
+		File extenReportFile = new File(
+				System.getProperty("user.dir") + "\\test-output\\ExtentReports\\extentReport.html");
 		ExtentSparkReporter sparkReporter = new ExtentSparkReporter(extenReportFile);
 		sparkReporter.config().setTheme(Theme.DARK);
 		sparkReporter.config().setReportName("Tutorialsninja automation Results Report");
