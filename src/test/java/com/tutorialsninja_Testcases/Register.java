@@ -87,4 +87,50 @@ public class Register extends Base {
 				"Password warning message is not displayed");
 	}
 
+	@Test(priority = 4)
+	public void verifyRegisterAccountEnteringDifferentPassword() {
+		rp = PageFactory.initElements(driver, RegisterPage.class);
+		rp.getContinueButton().click();
+		rp.getFirstNameField().sendKeys(dataProp.getProperty("firstName"));
+		rp.getLastNameField().sendKeys(dataProp.getProperty("lastName"));
+		rp.getEmailField().sendKeys(Utilities.generateTimeStamp());
+		rp.getTelephoneField().sendKeys(dataProp.getProperty("telePhone"));
+		rp.getPasswordField().sendKeys(dataProp.getProperty("password"));
+		rp.getConfimPasswordField().sendKeys(prop.getProperty("validPassword"));
+		rp.getAgreeCheckbox().click();
+		rp.getContinueButton().click();
+		Assert.assertTrue(rp.getPasswordMismatch().getText().contains(dataProp.getProperty("passwordMismatchMessage")),
+				"Password Mismatch Message is not displayed");
+	}
+
+	@Test(priority = 5)
+	public void verifyRegisteringanAccountExistingAccount() {
+		rp = PageFactory.initElements(driver, RegisterPage.class);
+		rp.getFirstNameField().sendKeys(dataProp.getProperty("firstName"));
+		rp.getLastNameField().sendKeys(dataProp.getProperty("lastName"));
+		rp.getEmailField().sendKeys(prop.getProperty("validUserName"));
+		rp.getTelephoneField().sendKeys(dataProp.getProperty("telePhone"));
+		rp.getPasswordField().sendKeys(dataProp.getProperty("password"));
+		rp.getConfimPasswordField().sendKeys(dataProp.getProperty("confirmPassword"));
+		rp.getSubscribeButton().click();
+		rp.getAgreeCheckbox().click();
+		rp.getContinueButton().click();
+		Assert.assertTrue(rp.getEmailAlreadyExist().getText().contains(dataProp.getProperty("emailAlreadyExist")),
+				"Email ID already exists Message is not Displayed");
+
+	}
+
+	@Test(priority = 6)
+	public void verifyREgisteranAccountInvalidEmailID() {
+		rp = PageFactory.initElements(driver, RegisterPage.class);
+		rp.getFirstNameField().sendKeys(dataProp.getProperty("firstName"));
+		rp.getLastNameField().sendKeys(dataProp.getProperty("lastName"));
+		rp.getEmailField().sendKeys(dataProp.getProperty("invalidEmail"));
+		rp.getTelephoneField().sendKeys(dataProp.getProperty("telePhone"));
+		rp.getPasswordField().sendKeys(dataProp.getProperty("password"));
+		rp.getConfimPasswordField().sendKeys(dataProp.getProperty("confirmPassword"));
+		rp.getSubscribeButton().click();
+		rp.getAgreeCheckbox().click();
+		rp.getContinueButton().click();
+	}
 }

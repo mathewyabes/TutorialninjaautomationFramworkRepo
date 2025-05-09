@@ -4,8 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class RegisterPage {
-	
-	
+
 	@FindBy(id = "input-firstname")
 	private WebElement firstNameField;
 
@@ -58,9 +57,31 @@ public class RegisterPage {
 
 	@FindBy(xpath = "//input[@id='input-telephone']/following-sibling::div[@class='text-danger']")
 	public WebElement telephoneWarning;
-	
+
 	@FindBy(xpath = "//input[@id='input-password']/following-sibling::div[@class='text-danger']")
 	public WebElement passwordWarning;
+
+	@FindBy(xpath = "//div[@class='text-danger']")
+	public WebElement passwordMismatch;
+	
+	@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
+	public WebElement emailAlreadyExist;
+
+	public WebElement getEmailAlreadyExist() {
+		return emailAlreadyExist;
+	}
+
+	public void setEmailAlreadyExist(WebElement emailAlreadyExist) {
+		this.emailAlreadyExist = emailAlreadyExist;
+	}
+
+	public WebElement getPasswordMismatch() {
+		return passwordMismatch;
+	}
+
+	public void setPasswordMismatch(WebElement passwordMismatch) {
+		this.passwordMismatch = passwordMismatch;
+	}
 
 	public WebElement getFirstNameField() {
 		return firstNameField;
@@ -181,7 +202,5 @@ public class RegisterPage {
 	public void setPasswordWarning(WebElement passwordWarning) {
 		this.passwordWarning = passwordWarning;
 	}
-
-	
 
 }
