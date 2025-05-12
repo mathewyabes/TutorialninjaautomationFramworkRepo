@@ -11,6 +11,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.Parameters;
+import org.testng.asserts.SoftAssert;
 
 import com.tutorialsninja.utils.Utilities;
 
@@ -19,6 +20,7 @@ public class Base {
 	WebDriver driver;
 	public Properties prop;
 	public Properties dataProp;
+	public SoftAssert softAssert = new SoftAssert();
 
 	public Base() {
 		prop = new Properties();

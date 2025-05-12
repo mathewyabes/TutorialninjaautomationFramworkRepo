@@ -3,6 +3,7 @@ package com.tutorialsninja.listener;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Field;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -42,18 +43,24 @@ public class Listeners implements ITestListener {
 
 		WebDriver driver = null;
 		try {
-			driver = (WebDriver) result.getTestClass().getRealClass().getDeclaredField("driver").get(result);
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (NoSuchFieldException e) {
-			e.printStackTrace();
-		} catch (SecurityException e) {
+			Object testClassInstance = result.getInstance();
+			Field field = testClassInstance.getClass().getDeclaredField("driver");
+			field.setAccessible(true);
+			driver = (WebDriver) field.get(testClassInstance);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		String destinationScreenshotPath = Utilities.captureScreenshot(driver, result.getName());
-		extentTest.addScreenCaptureFromPath(destinationScreenshotPath);
+		if (driver != null) {
+			String destinationScreenshotPath = Utilities.captureScreenshot(driver, result.getName());
+
+			try {
+				extentTest.addScreenCaptureFromPath(destinationScreenshotPath);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else {
+			System.out.println("Driver is null; Screenshot is not taken");
+		}
 		extentTest.log(Status.INFO, result.getThrowable());
 		extentTest.log(Status.FAIL, result.getName() + "got failed");
 

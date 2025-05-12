@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 public class Utilities {
 
 	public static final int IMPLICIT_WAIT_TIME = 10;
+//	public static WebDriver driver;
 
 	public static String generateTimeStamp() {
 		Date date = new Date();
@@ -31,5 +32,16 @@ public class Utilities {
 		return destinationScreenshotPath;
 
 	}
+
+//		static Actions action = new Actions(driver);
+//		
+//		public static void pressEnter() {
+//			action.sendKeys(Keys.ENTER).perform();
+//		}
+//		
+//		public static void pressTab() {
+//			action.sendKeys(Keys.TAB).perform();
+//		}
+//		
 
 }

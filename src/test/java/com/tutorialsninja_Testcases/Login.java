@@ -42,6 +42,7 @@ public class Login extends Base {
 		lp.getPasswordField().sendKeys(prop.getProperty("validPassword"));
 		lp.getLoginButton().click();
 		Assert.assertTrue(lp.getVerifyLoginSuccess().isDisplayed());
+		softAssert.assertAll();
 	}
 
 	@Test(priority = 2)
@@ -52,6 +53,7 @@ public class Login extends Base {
 		lp.getLoginButton().click();
 		Assert.assertTrue(lp.getErrorMessage().getText().contains(dataProp.getProperty("emailorPasswordNotMatching")),
 				"Warning message is not displayed");
+		softAssert.assertAll();
 	}
 
 	@Test(priority = 3)
@@ -62,6 +64,7 @@ public class Login extends Base {
 		lp.getLoginButton().click();
 		Assert.assertTrue(lp.getErrorMessage().getText().contains(dataProp.getProperty("emailorPasswordNotMatching")),
 				"Warning message is not displayed");
+		softAssert.assertAll();
 	}
 
 	@Test(priority = 4)
@@ -72,6 +75,7 @@ public class Login extends Base {
 		lp.getLoginButton().click();
 		Assert.assertTrue(lp.getErrorMessage().getText().contains(dataProp.getProperty("emailorPasswordNotMatching")),
 				"Warning message is not displayed");
+		softAssert.assertAll();
 	}
 
 	@Test(priority = 5)
@@ -80,5 +84,6 @@ public class Login extends Base {
 		lp.getLoginButton().click();
 		Assert.assertTrue(lp.getErrorMessage().getText().contains(dataProp.getProperty("emailorPasswordNotMatching")),
 				"Warning message is not displayed");
+		softAssert.assertAll();
 	}
 }
