@@ -31,6 +31,17 @@ public class RegisterPage {
 
 	@FindBy(xpath = "//input[@value='Continue']")
 	private WebElement continueButton;
+	
+	@FindBy(xpath = "//div[text()='E-Mail Address does not appear to be valid!']")
+	private WebElement invalidEmailmessage;
+
+	public WebElement getInvalidEmailmessage() {
+		return invalidEmailmessage;
+	}
+
+	public void setInvalidEmailmessage(WebElement invalidEmailmessage) {
+		this.invalidEmailmessage = invalidEmailmessage;
+	}
 
 	public WebElement getContinueButton() {
 		return continueButton;

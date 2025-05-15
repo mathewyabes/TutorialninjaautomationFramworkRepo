@@ -14,6 +14,17 @@ public class HomePage {
 
 	@FindBy(linkText = "Register")
 	private WebElement registerOption;
+	
+	@FindBy(linkText = "Specials")
+	private WebElement specialLink;
+
+	public WebElement getSpecialLink() {
+		return specialLink;
+	}
+
+	public void setSpecialLink(WebElement specialLink) {
+		this.specialLink = specialLink;
+	}
 
 	public WebElement getMyAccount() {
 		return myAccount;

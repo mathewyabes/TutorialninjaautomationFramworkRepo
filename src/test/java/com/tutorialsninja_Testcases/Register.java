@@ -120,30 +120,19 @@ public class Register extends Base {
 
 	}
 
-//	@Test(priority = 6)
-//	public void verifyRegisterAccountbyusingKeyboardAction() {
-//		rp = PageFactory.initElements(driver, RegisterPage.class);
-//		rp.getFirstNameField().sendKeys(dataProp.getProperty("firstName"));
-//		Utilities.pressTab();
-//		rp.getLastNameField().sendKeys(dataProp.getProperty("lastName"));
-//		Utilities.pressTab();
-//		rp.getEmailField().sendKeys(Utilities.generateTimeStamp());
-//		Utilities.pressTab();
-//		rp.getTelephoneField().sendKeys(dataProp.getProperty("telePhone"));
-//		Utilities.pressTab();
-//		rp.getPasswordField().sendKeys(dataProp.getProperty("password"));
-//		Utilities.pressTab();
-//		rp.getConfimPasswordField().sendKeys(dataProp.getProperty("confirmPassword"));
-//		Utilities.pressTab();
-//		rp.getSubscribeButton().click();
-//		Utilities.pressTab();
-//		Utilities.pressTab();
-//		rp.getAgreeCheckbox().click();
-//		Utilities.pressEnter();
-////		rp.getContinueButton().click();
-//		Assert.assertTrue(rp.getSuccessMessage().getText().contains(dataProp.getProperty("Accountcreated")),
-//				"Success Message is not Displayed");
-//		
-//	}
-	
+	@Test(priority = 6)
+	public void verifyRegisterAccountbyusinginvalidEmail() {
+		rp = PageFactory.initElements(driver, RegisterPage.class);
+		rp.getFirstNameField().sendKeys(dataProp.getProperty("firstName"));
+		rp.getLastNameField().sendKeys(dataProp.getProperty("lastName"));
+		rp.getEmailField().sendKeys(dataProp.getProperty("invalidEmailID"));
+		rp.getTelephoneField().sendKeys(dataProp.getProperty("telePhone"));
+		rp.getPasswordField().sendKeys(dataProp.getProperty("password"));
+		rp.getConfimPasswordField().sendKeys(dataProp.getProperty("confirmPassword"));
+		rp.getAgreeCheckbox().click();
+		rp.getContinueButton().click();
+		Assert.assertTrue(rp.getInvalidEmailmessage().getText().contains(dataProp.getProperty("invalidEmailMessage")));
+
+	}
+
 }
