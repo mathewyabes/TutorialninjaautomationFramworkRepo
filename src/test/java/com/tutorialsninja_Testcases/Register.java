@@ -117,7 +117,6 @@ public class Register extends Base {
 		rp.getContinueButton().click();
 		Assert.assertTrue(rp.getEmailAlreadyExist().getText().contains(dataProp.getProperty("emailAlreadyExist")),
 				"Email ID already exists Message is not Displayed");
-
 	}
 
 	@Test(priority = 6)
@@ -132,7 +131,6 @@ public class Register extends Base {
 		rp.getAgreeCheckbox().click();
 		rp.getContinueButton().click();
 		Assert.assertTrue(rp.getInvalidEmailmessage().getText().contains(dataProp.getProperty("invalidEmailMessage")));
-
 	}
 
 }
