@@ -7,13 +7,13 @@
   <test thread-count="5" name="Test in chrome(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.tutorialsninja_Testcases.SpecialOffer">
+      <class name="com.tutorialsninja_Testcases.ContactUs">
         <methods>
           <include name="setup"/>
-          <include name="teatDown"/>
-          <include name="verifyAddProductintheWishList"/>
+          <include name="verifyFillalltheMandatoryFieldinContactUsPage"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.tutorialsninja_Testcases.SpecialOffer -->
+      </class> <!-- com.tutorialsninja_Testcases.ContactUs -->
     </classes>
   </test> <!-- Test in chrome(failed) -->
 </suite> <!-- Failed suite [Suite] -->

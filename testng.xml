@@ -12,6 +12,8 @@
 			<class name="com.tutorialsninja_Testcases.Logout" />
 			<class name="com.tutorialsninja_Testcases.Search" />
 			<class name="com.tutorialsninja_Testcases.SpecialOffer" />
+			<class name="com.tutorialsninja_Testcases.GiftCertificate" />
+			<class name="com.tutorialsninja_Testcases.ContactUs" />
 		</classes>
 	</test>
 </suite>

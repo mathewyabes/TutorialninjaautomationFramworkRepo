@@ -51,6 +51,7 @@ public class Register extends Base {
 		rp.getContinueButton().click();
 		Assert.assertTrue(rp.getSuccessMessage().getText().contains(dataProp.getProperty("Accountcreated")),
 				"Success Message is not Displayed");
+		softAssert.assertAll();
 	}
 
 	@Test(priority = 2)
@@ -67,6 +68,7 @@ public class Register extends Base {
 		rp.getContinueButton().click();
 		Assert.assertTrue(rp.getSuccessMessage().getText().contains(dataProp.getProperty("Accountcreated")),
 				"Success Message is not Displayed");
+		softAssert.assertAll();
 	}
 
 	@Test(priority = 3)
@@ -85,6 +87,7 @@ public class Register extends Base {
 				"Telephone warning message is not displayed");
 		Assert.assertTrue(rp.getPasswordWarning().getText().contains(dataProp.getProperty("passwordWarningMessage")),
 				"Password warning message is not displayed");
+		softAssert.assertAll();
 	}
 
 	@Test(priority = 4)
@@ -101,6 +104,7 @@ public class Register extends Base {
 		rp.getContinueButton().click();
 		Assert.assertTrue(rp.getPasswordMismatch().getText().contains(dataProp.getProperty("passwordMismatchMessage")),
 				"Password Mismatch Message is not displayed");
+		softAssert.assertAll();
 	}
 
 	@Test(priority = 5)
@@ -117,6 +121,7 @@ public class Register extends Base {
 		rp.getContinueButton().click();
 		Assert.assertTrue(rp.getEmailAlreadyExist().getText().contains(dataProp.getProperty("emailAlreadyExist")),
 				"Email ID already exists Message is not Displayed");
+		softAssert.assertAll();
 	}
 
 	@Test(priority = 6)
@@ -131,6 +136,7 @@ public class Register extends Base {
 		rp.getAgreeCheckbox().click();
 		rp.getContinueButton().click();
 		Assert.assertTrue(rp.getInvalidEmailmessage().getText().contains(dataProp.getProperty("invalidEmailMessage")));
+		softAssert.assertAll();
 	}
 
 }
